@@ -2,6 +2,7 @@ package configs
 
 import (
 	"errors"
+	_ "github.com/joho/godotenv/autoload" // load .env file automatically
 
 	"github.com/spf13/viper"
 )
