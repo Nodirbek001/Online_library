@@ -26,13 +26,13 @@ func Init(root *mux.Router,
 		root:    root,
 		apiRoot: root.PathPrefix("/api").Subrouter(),
 	}
-	api:=api{
-		routes: &r,
+	api := api{
+		routes:     &r,
 		libService: libService,
 	}
 	api.initService()
 }
 
-func(api *api) initService(){
-
+func (api *api) initService() {
+	api.routes.apiRoot.HandleFunc("/v1/sign-up-user", api.SignUpUser).Methods("POST")
 }
